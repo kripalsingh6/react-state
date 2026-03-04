@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Counter from './Counter'
 import LikeButton from './LikeButton'
+import Ludo from './Ludo'
 import './App.css'
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
 
   return (
     <>
-      <LikeButton/>
+      <Ludo/>
     </>
   )
 }
