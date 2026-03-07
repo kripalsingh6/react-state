@@ -4,11 +4,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default function Tudo(){
 
-    let [Tudos, setTudo]= useState([{task:"sample-task",id:uuidv4() }]);
+    let [Tudos, setTudo]= useState([{task:"sample-task",id:uuidv4(), isdone:false }]);
     let[NewTudo, setNewTudo]=useState("");
 
     let newList=()=>{
-        setTudo([...Tudos, {task:NewTudo,id:uuidv4()}]);
+        setTudo([...Tudos, {task:NewTudo,id:uuidv4(), isdone: false}]);
         setNewTudo("");
     }
     let UpdateList=(event)=>{
@@ -24,6 +24,16 @@ export default function Tudo(){
             ...tudo,
             task: tudo.task.toUpperCase()
         }))
+
+    );
+    }
+     let markdone= ()=>{
+          setTudo(prevtudo =>
+        prevtudo.map(tudo => ({
+            ...tudo,
+          isdone:true
+        }))
+        
     );
     }
 
@@ -39,15 +49,17 @@ export default function Tudo(){
               {
                     Tudos.map((tudo) => (
                         <li key={tudo.id}>
-                            <span>
-                                {tudo.task}&nbsp;&nbsp;&nbsp;
+                            <span style={tudo.isdone ? {textDecorationLine:"line-through"} : {} }>
+                                {tudo.task}</span>&nbsp;&nbsp;&nbsp;
                                 <button onClick={()=>deleteTudo(tudo.id)}>delete</button>
-                                </span>
+                                <button onClick={()=>markdone(tudo.id)}>Mark as done</button>
+                                
                          </li>
                     ))
                 }
             </ul>
             <button onClick={toUpperCase}>toUpperCase</button>
+            
 
         </div>
     )
