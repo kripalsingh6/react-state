@@ -5,14 +5,16 @@ import Counter from './Counter'
 import LikeButton from './LikeButton'
 import Ludo from './Ludo'
 import Tudo from './Tudo'
-import './App.css'
+import Lottery from './lottery'
+import './App.css';
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Tudo/>
+    <Lottery n={3} WinningSum={15}/>
     </>
   )
 }
