@@ -7,6 +7,8 @@ import Ludo from './Ludo'
 import Tudo from './Tudo'
 import Lottery from './lottery'
 import './App.css';
+import CommentForm from './commentForm'
+import Comment from './comment'
 
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
 
   return (
     <>
-    <Lottery n={3} WinningSum={15}/>
+    <Comment/>
     </>
   )
 }
