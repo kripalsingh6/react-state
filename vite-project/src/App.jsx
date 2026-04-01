@@ -9,6 +9,8 @@ import Lottery from './lottery'
 import './App.css';
 import CommentForm from './commentForm'
 import Comment from './comment'
+import Counters from './counters'
+import Joker from './joker'
 
 
 function App() {
@@ -16,7 +18,7 @@ function App() {
 
   return (
     <>
-    <Comment/>
+    <Joker/>
     </>
   )
 }
